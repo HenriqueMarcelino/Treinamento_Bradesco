@@ -1,0 +1,5 @@
+package br.com.stefanini.projeto.model;
+
+public class Usuario {
+
+}

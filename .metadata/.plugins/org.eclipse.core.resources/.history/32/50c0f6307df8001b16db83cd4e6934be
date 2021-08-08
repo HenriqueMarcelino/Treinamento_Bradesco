@@ -1,0 +1,10 @@
+package br.com.stefanini.projetoCorrentista.model;
+
+public class Transacao {
+
+	private double valor;
+	private String produto;
+	private String  descricao;
+	
+
+}

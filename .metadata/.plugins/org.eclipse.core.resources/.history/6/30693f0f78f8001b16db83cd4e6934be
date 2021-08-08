@@ -1,0 +1,23 @@
+package br.com.stefanini.projetobd.persistence;
+
+import br.com.stefanini.projetoCorrentista.model.Usuario;
+
+public class UsuarioDao extends Dao{
+
+	public void createUsuario(Usuario usuario) throws Exception {
+		
+		open();
+
+		stmt = con.prepareStatement("insert into usuario values(null,?,?)");
+		stmt.setString(1, usuario.getNome());
+		stmt.setString(2, usuario.getEmail());
+		stmt.setInt(3, usuario.getIdUsuario());
+		stmt.execute(); 
+		stmt.close();
+
+		close();
+
+	}
+	
+	
+}

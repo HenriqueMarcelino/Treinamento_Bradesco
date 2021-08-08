@@ -1,0 +1,11 @@
+package br.com.stefanini.projeto.model;
+
+public class Endereco {
+	
+	private String endereco;
+	private String bairro;
+	private String cidade;
+	
+	
+
+}
