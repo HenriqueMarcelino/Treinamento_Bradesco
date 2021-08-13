@@ -17,8 +17,12 @@ public class Dao {
 	public void open() throws Exception {
 		Class.forName("com.msql.jdbc.Driver");
 
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdUm", "root", "admin123");
-
+//		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbUsuarioTransacoes", "root", "admin123");
+//
+//	}
+		
+		con = DriverManager.
+				getConnection("jdbc:mysql://localhost:3306/dbUsuarioTransacoes", "root", "admin123");
 	}
 
 	// Fechando o banco de dados

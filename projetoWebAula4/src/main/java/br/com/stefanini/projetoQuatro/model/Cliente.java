@@ -1,6 +1,9 @@
 package br.com.stefanini.projetoQuatro.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class Cliente {
 
@@ -8,27 +11,30 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private String senha;
+	// Relacionamento one to many
+	private List<Telefone> telefones;
+
 	private java.util.Date dataCriacao;
+
+	{
+		this.dataCriacao = new Date();
+	}
 
 	public Cliente() {
 
 	}
 
 	public Cliente(Integer id, String nome, String email, String senha) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		{
-			this.dataCriacao = new Date();
-		}
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", dataCriacao="
-				+ dataCriacao + "]";
+		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", telefones="
+				+ telefones + ", dataCriacao=" + dataCriacao + "]";
 	}
 
 	public Integer getId() {
@@ -69,6 +75,26 @@ public class Cliente {
 
 	public void setDataCriacao(java.util.Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
+	}
+
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefone(List<Telefone> telefone) {
+		this.telefones = telefone;
+	}
+
+	public void adicionar(Telefone ...t) {
+		if (telefones == null) {
+			telefones = new ArrayList<Telefone>();
+		}
+		this.telefones.addAll(Arrays.asList(t));
+	}
+
+	public Cliente getCliente() {
+
+		return null;
 	}
 
 }

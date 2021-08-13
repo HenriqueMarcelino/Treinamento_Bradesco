@@ -17,6 +17,11 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 
 	public Integer getIdUsuario() {
 		return IdUsuario;
@@ -50,4 +55,13 @@ public class Usuario {
 		this.transacao = transacao;
 	}
 
+	private void ValidacaoUsuario() {
+		if (this.IdUsuario <= 0) {
+			throw new IllegalArgumentException("Id Invalido");
+
+		} else if (this.nome.length() <= 1) {
+			throw new IllegalArgumentException("Informe um nome Valido");
+		}
+
+	}
 }

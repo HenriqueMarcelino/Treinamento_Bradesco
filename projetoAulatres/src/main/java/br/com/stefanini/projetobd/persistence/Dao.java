@@ -18,7 +18,7 @@ public class Dao {
 		Class.forName("com.msql.jdbc.Driver");
 	
 		con = DriverManager.
-				getConnection("jdbc:mysql://localhost:3306/bdUm", "root", "admin123");
+				getConnection("jdbc:mysql://localhost:3306/dbUm", "root", "admin123");
 	}
 	
 	// Fechando o Bando de dados.
