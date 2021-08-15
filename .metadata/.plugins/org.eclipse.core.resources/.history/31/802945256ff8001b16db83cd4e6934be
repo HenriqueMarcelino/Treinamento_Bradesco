@@ -1,7 +1,0 @@
-package br.com.stefanini.projetobd.persistence;
-
-public class UsuarioDao {
-	
-	
-
-}

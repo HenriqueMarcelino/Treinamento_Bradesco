@@ -8,7 +8,7 @@ create table usuaio(id int primary key auto_increment
 	create table cliente(idCliente int primary key,
 		perfil varchar (50),
 		status varchar (50),
-		foreign key (idCliente) references usuario(id));
+		foreign key (idCliente) references usuario(id) on delete cascade );
 		
 		insert into usuario values (100, 'Henrique', 'henrique@gmail.com','345689');
 		insert into cliente values (100, 'perfil 1', 'Ativo','345689');
@@ -16,7 +16,7 @@ create table usuaio(id int primary key auto_increment
 		create table vendedor(idVendedor int primary key,
 		perfil varchar (50)
 		comissao double,
-		foreign key (idVendedor) references usuario(id));
+		foreign key (idVendedor) references usuario(id) on delete cascade);
 		
 		insert into vendedor values (101, 'Carlos', 'carlos@gmail.com','897869');
 		insert into cliente values (101, 'vendedor', 0.2);
@@ -26,3 +26,15 @@ create table usuaio(id int primary key auto_increment
 			on u.id = c.idCliente
 			left join vendedor v
 			on u.idVendedor order by 1 asc;
+			
+			
+		#Esta certa	tb...
+			create table clienteEmpresa(
+			idCliente int primary key, 
+			nome varchar (50),
+			email varchar(50) not null,
+			senha varchar  (250),
+			perfil varchar(50),
+			status varchar(50));
+			
+			

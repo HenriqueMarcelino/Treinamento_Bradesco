@@ -1,11 +1,11 @@
 package br.com.stefanini.projetorel.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class Cliente extends Usuario implements Serializable {
 
-	
-	private final long SerialVersionUID =1L;
+	private final long SerialVersionUID = 1L;
 	private String perfil;
 	private String status;
 

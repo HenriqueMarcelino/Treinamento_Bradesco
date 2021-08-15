@@ -1,5 +1,0 @@
-package br.com.stefanini.projetoCorrentista.dto;
-
-public class UsuarioDto {
-
-}

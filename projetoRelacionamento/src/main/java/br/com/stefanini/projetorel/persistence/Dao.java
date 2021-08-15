@@ -14,7 +14,8 @@ public class Dao {
 
 	public void open() throws Exception {
 		Class.forName("com.msql.jdbc.Drive");
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BDCinco", "root", "arq2020");
+		con = DriverManager.
+		getConnection("jdbc:mysql://localhost:3306/bdcinco", "root", "admin123");
 	}
 
 	public void close() throws Exception {
