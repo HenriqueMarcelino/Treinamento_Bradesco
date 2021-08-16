@@ -25,7 +25,22 @@ public class TarefaFuncionario extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		if (request.getParameter(flag) != null) {
+			if (request.getParameter("flag").equals("add")) {
+				ManagerBeanFuncionario.Lst.add(
+						new Funcionario(Integer.parseInt(request.getParament("code")),
+								request.getParament("nome")));
+
+				request.setAttribute("lista", ManagerBeanFuncionario.lst);
+				request.getRequestDispacher("saidatres.jsp").forward(request, response);
+
+			}
+		} else {
+			request.setAttribute("lista", ManagerBeanFuncionario.lst);
+			request.getRequestDispacher("saidatres.jsp").forward(request, response);
+
+		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,12 +50,11 @@ public class TarefaFuncionario extends HttpServlet {
 			Integer code = new Integer(request.getParamenter("code")); // Paramenter
 
 			response.getWhiter().print("um" + code);
-			
+
 			Funcionario existe = new FuncionarioDao().findByCode(code);
 			HttpSession session = request.getSession(true);
 			if (existe != null) {
 
-				
 				List<Funcionario> listaf = new FuncionarioDao().findSelectAllFuncionario();
 				List<Tarefa> listat = new TarefaDao().findSelectAllTarefa();
 
