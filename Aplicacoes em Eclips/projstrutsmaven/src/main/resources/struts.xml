@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="projstrutsmaven" extends="struts-default">
+ 
+	<action name="usuario.cadastrar" 
+	   	class="br.com.stefanini.projstrutsmaven.controller.UsuarioAction" 
+		method="cadastrar">
+		<result name="success">/sistema.jsp</result>
+	</action>
+	
+	
+	
+	
+	
+	
+	<action name="usuarioaction.login" 
+	   	class="br.com.stefanini.projstrutsmaven.controller.UsuarioAction" 
+		method="login">
+		<result name="input">/login.jsp</result>
+		<result name="login">/adm/sistema.jsp</result>
+		<result name="success">/usu/sistema.jsp</result>
+		<result name="error">/error.jsp</result>
+	</action>
+
+	</package>
+</struts>

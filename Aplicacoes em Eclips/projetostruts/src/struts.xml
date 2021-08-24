@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<package name="projetostruts" extends="struts-default">
+	
+	<action name="pessoaaction" class="br.com.stefanini.projetostruts.controller.PessoaAction">
+		<result name="input">/index.jsp</result>
+		<result name="success">/saida.jsp</result>
+		<result name="error">/erro.jsp</result>
+	</action>
+	
+	 <action name="pessoaaction.gravar" 
+ class="br.com.stefanini.projetostruts.controller.PessoaAction" method="gravar">
+        <result name="input">/sistema.jsp</result>
+	    <result name="success">/saidasistema.jsp</result>
+		<result name="error">/errosistema.jsp</result>
+	</action>
+	
+	 <action name="pessoaaction.lerArquivo" 
+ class="br.com.stefanini.projetostruts.controller.PessoaAction" method="lerArquivo">
+        <result name="input">/entradaarquivo.jsp</result>
+	    <result name="success">/saidaarquivo.jsp</result>
+		<result name="error">/erroarquivo.jsp</result>
+	</action>
+	</package>
+</struts>
