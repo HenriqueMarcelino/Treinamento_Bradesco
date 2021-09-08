@@ -24,7 +24,7 @@ public class Address {
 	@OneToOne
 	@JoinColumn(name = "id_user", referencedColumnName = "idUser") // Chave estrangeira
 	@JsonBackReference(value = "address")
-	private User user;
+	private Users user;
 
 	public Address() {
 	}
@@ -34,7 +34,7 @@ public class Address {
 		return "Address [id=" + id + ", city=" + city + ", state=" + state + ", user=" + user + "]";
 	}
 
-	public Address(Long id, String city, String state, User user) {
+	public Address(Long id, String city, String state, Users user) {
 		super();
 		this.id = id;
 		this.city = city;
@@ -66,11 +66,11 @@ public class Address {
 		this.state = state;
 	}
 
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

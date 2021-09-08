@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
-public class User {
+public class Users {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class User {
 	@OneToOne(mappedBy = "user", cascade = { CascadeType.ALL })
 	private Address address;
 
-	public User() {
+	public Users() {
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class User {
 		return "User [idUser=" + idUser + ", userName=" + userName + ", email=" + email + ", address=" + address + "]";
 	}
 
-	public User(Long idUser, String userName, String email, Address address) {
+	public Users(Long idUser, String userName, String email, Address address) {
 		super();
 		this.idUser = idUser;
 		this.userName = userName;

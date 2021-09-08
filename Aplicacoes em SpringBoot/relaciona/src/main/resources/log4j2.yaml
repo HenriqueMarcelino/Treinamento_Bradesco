@@ -1,0 +1,34 @@
+Configuration:
+  status: debug
+
+  appenders:
+    Console:
+      name: LogToConsole
+      PatternLayout:
+        Pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    RollingFile:
+      - name: LogToRollingFile
+        fileName: c:/temp2/relaciona.log
+        filePattern: "logs/$${date:yyyy-MM}/relaciona-%d{MM-dd-yyyy}-%i.log"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 100MB
+        DefaultRollOverStrategy:
+          max: 10
+
+  Loggers:
+    logger:
+      - name: br.com.relaciona
+        level: debug
+        additivity: false
+        AppenderRef:
+          - ref: LogToConsole
+          - ref: LogToRollingFile
+
+    Root:
+      level: error
+      AppenderRef:
+        ref: LogToConsole

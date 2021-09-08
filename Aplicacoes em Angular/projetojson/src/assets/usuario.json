@@ -1,0 +1,16 @@
+{
+    "usuario": [
+        {
+            "id": 1,
+            "nome": "Henrique",
+            "email": "henrique@gmail.com",
+            "foto": "https://cdn4.iconfinder.com/data/icons/avengers-end-game-outline/361/icon_avatar_marvel_studios_avengers_comic_film-07-128.png"
+        },
+        {
+           "id": 2,
+           "nome": "Carlos",
+           "email": "carlos@gmail.com",
+           "foto": "https://cdn4.iconfinder.com/data/icons/avengers-end-game-outline/361/icon_avatar_marvel_studios_avengers_comic_film-08-256.png"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+<h1>Projeto Firebase Banco de Dados</h1>
+<hr>
+
+<label>Id:</label><br>
+<input type="number" name='id' [(ngModel)]='projeto.id'><br>
+
+<label>Nome:</label><br>
+<input type="text" name='name' [(ngModel)]='projeto.name'><br>
+
+<label>Descrição:</label><br>
+<input type="text" name='descricao' [(ngModel)]='projeto.descricao'><br>
+
+<label>Preço:</label><br>
+<input type="number" name='preco' [(ngModel)]='projeto.preco'><br>
+
+<label>Imagem:</label><br>
+<input type="text" name='imagem' [(ngModel)]='projeto.imagem'><br>
+
+<br>
+<button (Click)='gravar();'>Gravar</button>
+
+<ul *ngFor='let p of produtos'>
+    <li>{{p|json}}</li>
+</ul>

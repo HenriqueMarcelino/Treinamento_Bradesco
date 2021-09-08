@@ -1,0 +1,27 @@
+<h1>Conexão SpringBoot</h1>
+
+<div>
+  <label>Nome:</label><br>
+  <input type="text" name="nome" [(ngModel)]="usuario.nome" placeholder="Digite o nome"><br>
+  <br>
+  <label>Email:</label><br>
+  <input type="text" name="email" [(ngModel)]="usuario.email" placeholder="Digite seu email"><br>
+  <br>
+  <label>Senha:</label><br>
+  <input type="password" name="password" [(ngModel)]="usuario.password" placeholder="Digite sua senha"><br>
+  <br>
+  <label>Telefone Celular:</label><br>
+  <input type="text" name="telefone" [(ngModel)]="users.telefone[0].numero" placeholder="Digite seu telefone"><br>
+  <br>
+  <label>Telefone Residencia:</label><br>
+  <input type="text" name="telefone" [(ngModel)]="users.telefone[1].numero" placeholder="Digite seu telefone"><br>
+  <br>
+  <button (click)="gravar();">Gravar</button>
+
+</div>
+
+<hr>
+
+<div *ngFor='let u od listausers'>
+  <li>{{u|json}}</li>
+</div>

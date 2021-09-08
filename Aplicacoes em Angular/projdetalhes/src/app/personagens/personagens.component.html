@@ -1,0 +1,11 @@
+<div class="container-fluid p-5 bg-light">
+    <div class="row">
+        <mdb-card class="col-md-4 mb-3" *ngFor='let p of personagens'>
+            <div class="view zoom overlay" mbdWavesEffect>
+                <a routerLink='/detalhes/{{p.id}}'>
+                    <mdb-card-img [src]='p.imagem' title='{{p.nome}}' class="p-3"></mdb-card-img>
+                </a>
+            </div>
+        </mdb-card>
+    </div>    
+</div>

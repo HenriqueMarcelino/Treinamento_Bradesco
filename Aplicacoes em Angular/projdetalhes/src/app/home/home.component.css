@@ -1,0 +1,22 @@
+h1{
+    font-size: 100px;
+    margin-top: 200px;
+}
+h1, h3{
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+header{
+    background-image: url('https://images5.alphacoders.com/327/thumb-1920-327752.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    height: 600px;
+}
+
+.btn-saiba-mais{
+    justify-content: center;
+}

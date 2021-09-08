@@ -1,0 +1,47 @@
+<h2 class="jumbotron text-center bg-info text-white">Treinamento em Angular 10</h2>
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <!--LADO ESQUERDO-->
+        <div class="col-md-4 offeset-md-1">
+            <h3 class="text-center">Cadastro de Usuarios</h3>
+
+            <div class="card border-dark mt-3">
+                <div class="card-heard text-center">
+                    Formulário
+                </div>
+
+                <div class="card-body">
+                    <label for="Id:">Id :</label>
+                    <input type="number" name="id" id="id" [(ngModel)]="usuario.id" class="form-control">
+
+                    <label for="nome">Nome :</label>
+                    <input type="text" name="nome" id="nome" [(ngModel)]="usuario.nome" class="form-control">
+
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email" [(ngModel)]="usuario.email" class="form-control">
+
+                    <label for="foto">Foto : :</label>
+                    <input type="foto" name="foto" id="foto" [(ngModel)]="usuario.foto" class="form-control">
+
+                    <button (click)="gravar();" class="btn btn-success mt-3">Gravar</button>
+                </div>
+            </div>
+        </div>
+
+     <!--LADO DIREITO-->
+        <div class="col-md-6">
+            <h3 class="text-center">Lista de usuarios</h3>
+            <div class="row">
+                <div class="col-md-4 card-group p-2" *ngFor='let u of usuarios'>
+                    <div class="card p-2 shodow border-info">
+                        <img [src]="u.foto" class="w-100 img-thumbnail" title="{{u.nome}}">
+                        <p><b>Nome:</b>{{u.nome}}</p>
+                        <p><b>Email:</b>{{u.email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+<h1 class="bg-dark p-3 text-whiter"><i class="fa fa-sign-in-alt text-info"></i> input</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <!--Campo de pesquisa-->
+        <div class="col-md-6 offset-md-1">
+            <h3 class="text-center">Pesquisa de Cliente</h3>
+            <label> Entre com Codigo:</label>
+            <input type="number" [(ngModel)]= "codigo" name="codigo" class="form-control">
+
+            <br/>
+            <button (click)="escolha()" class="btn btn-info mt-3 btn-lg">Buscar Vetor
+                <i class="fa fa-search"></i>
+            </button>
+            <br/>
+
+        </div>
+        <!--Resultado da pesquisa-->
+        <div class="col-md-6">
+            <h3 class="text-center">Resultado da Busca</h3>
+            <app-cliente [clientesaida]="clienteentrada"></app-cliente>
+        </div>
+
+    </div>
+</div>
+

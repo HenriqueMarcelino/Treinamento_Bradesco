@@ -1,0 +1,13 @@
+img{
+    background-size: cover;
+    height: 620px;
+}
+.navbar{
+    background-color: rgba(0,0,0,0.5);
+}
+.h3-responsive{
+    font-size: 50px;
+    font-weight: bolder;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+}

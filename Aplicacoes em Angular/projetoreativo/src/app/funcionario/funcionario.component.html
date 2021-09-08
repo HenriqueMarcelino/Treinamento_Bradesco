@@ -1,0 +1,70 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card card-body shadow mt-5">
+        <form [formGroup]='fg'>
+            <label>Id:</label>
+            <input type="number" name="id" id="id" [(ngModel)]='funcionario.id'
+             placeholder="Digite o seu ID" title="Digite apenas numeros" formControlName='id'
+             class="form-control mb-2">
+             <div *ngIf='id.invalid && id.touched'>
+                 <div [ngSwitch]='id.erros != null'>
+                     <span *ngSwtchCase="id.erros['requerid']">
+                         Id Obrigatório
+                     </span>
+                     <span *ngSwtchCase="id.erros['min'] != null">
+                        Valor do id não pode ser inferior a 5.
+                    </span>
+                    <span *ngSwtchCase="id.erros['max'] != null">
+                        Valor do id não pode ser inferior a 5000.
+                    </span>
+                 </div>
+             </div>
+
+             <label>Nome:</label>
+            <input type="text" name="nome" id="nome" [(ngModel)]='funcionario.nome'
+             placeholder="Digite o seu nome" title="Digite apenas letras" formControlName='nome'
+             class="form-control mb-2">
+             
+             <div>
+                <div *ngIf='nome.invalid && nome.touched'>
+                    <div [ngSwitch]='id.erros != null'>
+                        <span *ngSwtchCase="nome.erros['requerid']">
+                            Nome Obrigatório
+                        </span>
+                        <span *ngSwtchCase="nome.erros['minlength'] != null">
+                           Valor do id não pode ser inferior a 5.
+                       </span>
+                       <span *ngSwtchCase="nome.erros['maxlength'] != null">
+                           Nome muito grande
+                       </span>
+                       <span *ngSwtchCase="nome.erros['pattern'] != null">
+                        Nome fora da regra. Apenas letras, sem caracteres especiais.
+                    </span>
+                    </div>
+                </div>
+
+             </div>
+
+             <label>Email:</label>
+            <input type="text" name="email" id="email" [(ngModel)]='funcionario.email'
+             placeholder="Digite o seu email" title="Digite apenas letras" formControlName='email'
+             class="form-control mb-2">
+             
+             <div>
+
+             </div>
+             
+             <label>Foto:</label>
+             <input type="text" name="foto" id="foto" [(ngModel)]='funcionario.foto'
+              placeholder="Digite a url da sua foto" title="Digite a url da sua foto" formControlName='foto'
+              class="form-control mb-2">
+
+              <div>
+                  
+              </div>
+
+              <button (click)="gravar();" title="Clique para gravar" [disabled]="fg.invalid" 
+              class="btn btn-dark mt-3">Enviar</button>
+              
+        </form>
+    </div>
+</div>
